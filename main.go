@@ -49,7 +49,7 @@ func find(dir, ext string) []string {
 
 	for _, e := range entries {
 		if !e.IsDir() && filepath.Ext(e.Name()) == ext {
-			out = append(out, dir + "/" + e.Name())
+			out = append(out, dir+"/"+e.Name())
 		}
 	}
 
@@ -139,14 +139,14 @@ func main() {
 		}
 
 		return c.Render("index", fiber.Map{
-			"url": url,
+			"url":    url,
 			"files":  dirs,
 			"path":   pathStr,
 			"other":  otherFiles(pathStr),
 			"images": images(pathStr),
-			"pdfs": pdfs(pathStr),
+			"pdfs":   pdfs(pathStr),
 		})
 	})
 
-	log.Fatal(app.Listen(":3000"))
+	log.Fatal(app.Listen("0.0.0.0:3000"))
 }
