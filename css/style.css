@@ -1,0 +1,78 @@
+body {
+    background: #e5e5e5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+img {
+    height: 5rem;
+}
+
+#folders {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.folder {
+    margin: auto;
+    border-radius: 5px;
+    display: grid;
+    transition-duration: 100ms;
+}
+
+.folder a {
+    display: grid;
+    text-align: center;
+}
+
+.folder a p {
+    margin: auto 5px;
+}
+
+.folder * {
+    margin: auto;
+    align-self: center;
+}
+
+.folder:hover {
+    scale: 1.1;
+    background: rgba(119, 119, 119, 0.13);
+}
+
+.pdf {
+    margin-bottom: 4rem;
+    display: grid;
+}
+
+.pdf object {
+    margin: auto;
+}
+
+#images {
+    display: grid;
+}
+
+#images img {
+    width: 80%;
+    height: auto;
+    margin: 2rem auto;
+}
+
+#others {
+    display: grid;
+}
+
+.other {
+    width: 100%;
+    transition-duration: 100ms;
+}
+
+.other:hover {
+    background: #aeb6c2;
+}

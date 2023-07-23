@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Portafolio</title>
+</head>
+
+{{$pth := .path}}
+{{$url := .url}}
+
+<body>
+    <div id="folders">
+        {{range $dir := .files}}
+        <div class="folder">
+            <a href="{{$url}}{{$dir}}">
+                <img src="/assets/mac-folder-6654.svg" alt="">
+                <p>{{$dir}}</p>
+            </a>
+        </div>
+        {{end}}
+    </div>
+
+    <div id="pdfs">
+        {{range $pdf := .pdfs}}
+        <div class="pdf">
+            <h2>{{$pdf.Name}}</h2>
+            <object data="/{{$pdf.Path}}" type="application/pdf" width="80%" height="500px"></object>
+        </div>
+        {{end}}
+    </div>
+
+    <div id="images">
+        {{range $img := .images}}
+        <img src="/{{$img}}" alt="">
+        {{end}}
+    </div>
+
+    <div id="others">
+        {{range $file := .other}}
+        <a href="/{{$file.Path}}" class="other">{{$file.Name}}</a>
+        {{end}}
+    </div>
+
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
